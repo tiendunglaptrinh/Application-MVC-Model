@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.register_nation{
+    width: 400px;
+    border: 1px solid #DDDDDD;
+    margin-top: 60px;
+    margin: 0px auto;
+}
+
+.register_nation h3{
+    background: #009688;
+    padding: 5px;
+    color: #FFF;
+    text-align: center;
+}
+
+.register_nation form table tr td {
+    padding: 5px;
+}
+
+.register_nation form table tr td input{
+    padding:  3px 5px;
+}
