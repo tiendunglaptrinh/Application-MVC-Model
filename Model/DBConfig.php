@@ -3,7 +3,7 @@
         private $hostname = "localhost";
         private $username = "root";
         private $pass = '';
-        private $databaseName = 'management_football_league';
+        private $databaseName = 'db2.0';
         private $conn = NULL;
         private $result = NULL;
         public function connect()
