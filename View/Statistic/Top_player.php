@@ -1,5 +1,13 @@
-<?php
-// Database connection details
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top_Player</title>
+</head>
+<body>
+    <?php
+    // Database connection details
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -33,7 +41,7 @@ function getPlayerTotalGoals($seasonYear, $conn, $threshold = 0) {
     $goalsResult = $conn->query($getGoalsQuery);
 
     while ($row = $goalsResult->fetch_assoc()) {
-        // Add a loop or if statement here (for example, exclude players with less than $threshold goals)
+        // if statement exclude players with less than $threshold goals
         if ($row['TotalGoals'] > $threshold) {
             $totalGoals[] = $row;
         }
@@ -49,17 +57,6 @@ function getPlayerTotalGoals($seasonYear, $conn, $threshold = 0) {
 
 // Call the getPlayerTotalGoals function
 $playerTotalGoals = getPlayerTotalGoals(2022, $conn);
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player</title>
-</head>
-<body>
-    <?php
     echo "Player Total Goals:\n";
 
     // Display player total goals in an HTML table

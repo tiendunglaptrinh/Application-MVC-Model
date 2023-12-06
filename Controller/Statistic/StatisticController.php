@@ -27,7 +27,6 @@
     <meta charset="UTF-8">
     <title>List of Tables</title>
     <style>
-        /* Add your styles here */
     </style>
 </head>
 <body>
