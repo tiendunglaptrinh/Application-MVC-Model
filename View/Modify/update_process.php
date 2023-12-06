@@ -38,11 +38,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         }
     }
     catch(mysqli_sql_exception $e){
-        echo "Error: " . $e->getMessage();
+        ?>
+        <div style="
+        text-align: center;
         
-        ?> 
-        <br>
-        <a href="http://localhost:3000/index.php?controller=modify" class="button">Go Back</a>
+        ">
+            <div style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 10px; display: inline-block;">
+                Error: <?php echo $e->getMessage(); ?>
+            </div>
+            <a href="http://localhost:3000/index.php?controller=modify" class="button" style="text-decoration: none; background-color: #007bff; color: white; padding: 8px 16px; border-radius: 4px; display: inline-block;">Go Back</a>
+        </div>
         <?php
     }
     

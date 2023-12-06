@@ -4,8 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Update Data</title>
-    <!-- Add necessary styles or scripts -->
-</head>
+    <style>
+     body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 70%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        </style>
 <body>
     <h2>Update <?php echo $_GET['table']; ?></h2>
 
