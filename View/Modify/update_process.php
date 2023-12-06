@@ -28,14 +28,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $updateQuery .= " WHERE row = $id";
     // echo $updateQuery;
     // Execute the update query
-    $result = $db->execute($updateQuery);
 
-    if ($result) {
-        echo "Row updated successfully!";
-        header('Location: http://localhost:3000/index.php?controller=modify&option=show_table&table='.$tableName);
-        exit();
-    } else {
-        echo "Error updating row: ";
+    try{
+        $result = $db->execute($updateQuery);
+        if ($result) {
+            echo "Row updated successfully!";
+            header('Location: http://localhost:3000/index.php?controller=modify&option=show_table&table='.$tableName);
+            exit();
+        }
     }
+    catch(mysqli_sql_exception $e){
+        echo "Error: " . $e->getMessage();
+        
+        ?> 
+        <br>
+        <a href="http://localhost:3000/index.php?controller=modify" class="button">Go Back</a>
+        <?php
+    }
+    
+
+    
 }
 ?>
