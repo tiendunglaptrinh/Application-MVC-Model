@@ -9,7 +9,8 @@
 </head>
 <body>
     <div class="sidebar">
-        <h2>List of Tables</h2>
+        <a href="http://localhost:3000/index.php" class="" style="font-size: 2rem; color: white;" onclick="redirectToDashboard()">Dashboard</a>
+        <h2 style="color: white;">List of Tables</h2>
         <ul class="table-list">
             <?php foreach ($tables as $table) { ?>
                 <li><a href="?controller=modify&option=show_table&table=<?php echo $table; ?>"><?php echo $table; ?></a></li>
@@ -75,3 +76,9 @@
     </div>
 </body>
 </html>
+<script>
+        function redirectToDashboard() {
+            console.log("back")
+            window.location.replace('http://localhost:3000/index.php');
+        }
+</script>

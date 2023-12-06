@@ -12,4 +12,4 @@ http://localhost:3000/index?controller=statistic&action=topplay
 http://localhost:3000/index?controller=statistic&action=sponsor
 
 
-Thay db2.0 trong Model/DB_Config = db trên máy
+db2.0
