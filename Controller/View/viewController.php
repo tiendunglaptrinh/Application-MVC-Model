@@ -1,6 +1,6 @@
 <?php
-require_once './Model/DBConfig.php'; // Include your DBConfig file
-
+require_once './Model/DBConfig.php'; 
+// require_once 'sidebar.php';
 class ViewController {
     
     public function showListofTables() {

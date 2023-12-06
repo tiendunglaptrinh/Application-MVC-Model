@@ -1,8 +1,8 @@
 <div class="sidebar">
-        <a href="?controller=view">View</a>
-        <a href="?controller=modify">Modify</a>
-        <a href="?controller=nation">Nation</a>
-        <a href="?controller=season">Season</a>
-        <a href="?controller=statistic">Statistic</a>
+        <a href="http://localhost:3000/index.php?controller=view">View</a>
+        <a href="http://localhost:3000/index.php?controller=view">Modify</a>
+        <a href="http://localhost:3000/index.php?controller=view">Nation</a>
+        <a href="http://localhost:3000/index.php?controller=view">Season</a>
+        <a href="http://localhost:3000/index.php?controller=view">Statistic</a>
         
     </div>
