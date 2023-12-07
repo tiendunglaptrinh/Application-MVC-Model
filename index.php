@@ -41,10 +41,14 @@
             padding-left: 20px;
             /* Add any other styles for the main content area */
         }
+        .dashboarditem{
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
     <div class="sidebar">
+        <a href="" class = "dashboarditem"><i class='bx bxs-user' ></i>&nbsp;&nbsp;Admin Dashboard</a>
         <a href="?controller=view">View</a>
         <a href="?controller=modify">Modify</a>
         <a href="?controller=nation">Nation</a>

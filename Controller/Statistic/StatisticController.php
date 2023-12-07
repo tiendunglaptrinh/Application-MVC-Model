@@ -35,7 +35,7 @@
         }
 
         .sidebar {
-            background-color: #333;
+            background-color: #111;
             color: white;
             width: 250px;
             height: 100vh;
@@ -107,13 +107,13 @@
         }
         .dashboard-link {
             display: block;
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: bold;
             text-decoration: none;
             color: white;
             padding: 10px 20px;
             margin-bottom: 20px;
-            background-color: #333;
+            /* background-color: #333; */
             border-radius: 4px;
             text-align: center;
             transition: background-color 0.3s ease;
@@ -122,7 +122,7 @@
 </head>
 <body>
     <div class="sidebar">
-        <a href="http://localhost:3000/index.php" class="" style="font-size: 2rem; color: white;" onclick="redirectToDashboard()">Dashboard</a>
+        <a href="http://localhost:3000/index.php" class="dashboard-link" style=" color: white;" onclick="redirectToDashboard()">Dashboard</a>
         <h2 style="color: white;">List of Tables</h2>
         <ul class="table-list">
             <li><a href="?controller=statistic&option=show_table&table=top_player">top_player</a></li>
