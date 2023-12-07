@@ -44,6 +44,16 @@
         .dashboarditem{
             font-weight: 700;
         }
+        .default-content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .contentdashboard{
+            margin-left: 100px;
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -88,8 +98,19 @@
                 break;
             default:
                 
-                echo "<p>Welcome to the dashboard!</p>";
-                break;
+                ?>
+                <div class="contentdashboard">
+                    <div class="default-content">
+                        <!-- Add an image -->
+                        
+                        
+                        <!-- Add introductory text -->
+                        <h1>Welcome Admin</h1>
+                        <p style="margin-top: 24px;">This is the dashboard. You can manage various sections in the soccer league.</p>
+                        <img src="pic\materazzi-ruicosta.webp" alt="Welcome Image" style="margin-top: 100px;">
+                    </div>
+                </div>
+                <?php
         }
         ?>
     </div>
