@@ -22,7 +22,7 @@ if ($conn->connect_error) {
 }
 
 // Include the getPlayerTotalGoals function
-function getPlayerTotalGoals($seasonYear, $conn, $threshold = 0) {
+function getPlayerTotalGoals($seasonYear, $conn, $threshold) {
     $totalGoals = array();
     $seasonStartYear = $seasonYear;
 
@@ -56,7 +56,7 @@ function getPlayerTotalGoals($seasonYear, $conn, $threshold = 0) {
 }
 
 // Call the getPlayerTotalGoals function
-$playerTotalGoals = getPlayerTotalGoals(2022, $conn);
+$playerTotalGoals = getPlayerTotalGoals(2022, $conn, 0);
     echo "Player Total Goals:\n";
 
     // Display player total goals in an HTML table

@@ -65,9 +65,8 @@
 
     // Call the getSponsorTotalDonations function
     $sponsorTotalDonations = getSponsorTotalDonations($conn);
-    ?>
 
-    <?php
+
     if ($sponsorTotalDonations) {
         // Create arrays for chart data
         $sponsorNames = [];
