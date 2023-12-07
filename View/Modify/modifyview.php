@@ -47,6 +47,8 @@
         .Modifycontent {
             margin-left: 24px;
             padding: 20px;
+            
+            
         }
 
         table {
@@ -99,14 +101,32 @@
             transition: background-color 0.3s ease;
         }
 
-        /* .dashboard-link:hover {
+        .action-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-btn:hover {
             background-color: #555;
-        } */
+        }
+        .insert_btn{
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 24px;
+            margin-bottom: 12px;
+        }
     </style>
 </head>
 <body>
     <div class="sidebar">
-        <a href="http://localhost:3000/index.php" class="dashboard-link" style=" color: white;" onclick="redirectToDashboard()">Dashboard</a>
+        
+            <a href="http://localhost:3000/index.php" class="dashboard-link" style=" color: white;" onclick="redirectToDashboard()">Dashboard</a>
+        
         <h2 style="color: white;">List of Tables</h2>
         <ul class="table-list">
             <?php foreach ($tables as $table) { ?>
@@ -120,6 +140,10 @@
         if (isset($columns) && isset($data_result)) {
             
             ?>
+            <div class="insert_btn">
+                <a href="View/Modify/modifyInsert.php?table=<?php echo $tableName; ?>&>" class="action-btn">Insert</a>
+            </div>
+
             <table class="table table-hover" style="width: 100%;">
             <thead>
                 <!-- <tr><a href="" class="" style="font-size: 2rem; color: white;" onclick="redirectToDashboard()">Dashboard</a></tr> -->
@@ -142,8 +166,9 @@
                                 <?php } ?>
                                 <td>
                                    
-                                    <a href="View/Modify/modifyUpdate.php?table=<?php echo $tableName; ?>&id=<?php echo $i; ?>" class="action-btn">Update</a> |
-                                    <a href="View/Modify/modifyDelete.php?table=<?php echo $tableName; ?>&id=<?php echo $i; ?>" class="action-btn">Delete</a>
+                                    <a href="View/Modify/modifyUpdate.php?table=<?php echo $tableName; ?>&id=<?php echo $i; ?>" class="action-btn">Update</a>
+                                    <a href="#" onclick="deleteRow(<?php echo $row['row']; ?>)" class="action-btn">Delete</a>
+
                                 </td>
                             </tr>
                             
@@ -161,15 +186,16 @@
             echo "<h2>Select a table from the sidebar to view its content.</h2>";
         }
         ?>
-
-        <!-- JavaScript function for delete confirmation -->
-        <script>th 
-            function deleteRow(rowId) {
-                if (confirm('Are you sure you want to delete this row?')) {
-                    window.location.href = '?modify=delete&id=' + rowId;
-                }
-            }
-        </script>
+        <div id="deleteConfirmationModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Confirm Delete</h2>
+                <p>Are you sure you want to delete this row?</p>
+                <div class="modal-buttons">
+                    <button onclick="cancelDelete()">Cancel</button>
+                    <button onclick="confirmDelete()">Delete</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
@@ -178,4 +204,12 @@
             console.log("back")
             window.location.replace('http://localhost:3000/index.php');
         }
+        
+</script>
+<script>
+function deleteRow(rowId) {
+    if (confirm('Are you sure you want to delete this row?')) {
+        window.location.href = `View/Modify/modifyDelete.php?controller=modify&modify=delete&table=<?php echo $tableName; ?>&id=${rowId}`;
+    }
+}
 </script>
