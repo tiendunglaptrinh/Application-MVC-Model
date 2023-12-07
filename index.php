@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HCSDL - BTL2 </title>
     <style>
-        *{
+        * {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         /* Style the sidebar */
         .sidebar {
             height: 100%;
@@ -41,24 +43,21 @@
             padding-left: 20px;
             /* Add any other styles for the main content area */
         }
-        .dashboarditem{
-            font-weight: 700;
-        }
     </style>
 </head>
+
 <body>
     <div class="sidebar">
-        <a href="" class = "dashboarditem"><i class='bx bxs-user' ></i>&nbsp;&nbsp;Admin Dashboard</a>
         <a href="?controller=view">View</a>
         <a href="?controller=modify">Modify</a>
         <a href="?controller=nation">Nation</a>
         <a href="?controller=season">Season</a>
         <a href="?controller=statistic">Statistic</a>
-        
+
     </div>
 
     <div class="content">
-       
+
         <?php
         include "Model/DBConfig.php";
         $db = new Database();
@@ -87,11 +86,12 @@
                 require_once('Controller/Modify/modifyController.php');
                 break;
             default:
-                
+
                 echo "<p>Welcome to the dashboard!</p>";
                 break;
         }
         ?>
     </div>
 </body>
+
 </html>
